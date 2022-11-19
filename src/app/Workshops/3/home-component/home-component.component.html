@@ -1,0 +1,10 @@
+<div *ngFor=" let p of listProdcut; let i=index">
+  <span  [ngStyle]="{'backgroundColor' :p.quantity==0?'red':'blue'}"   >
+    {{p.id}}
+    {{p.title}}
+    {{p.price}}
+    {{p.quantity}}
+    {{p.like}}
+    <a routerLink="/details/{{p.id}}">details</a>
+  </span>
+</div>

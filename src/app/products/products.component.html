@@ -1,0 +1,50 @@
+<div *ngFor=" let p of listProdcut; let i=index">
+  <div *ngIf="p.price<search||search==-1" >
+   {{p.id}}
+   {{p.title}}
+   {{p.price}}
+   {{p.quantity}}
+   {{p.like}}
+    <button type="button" class="btn btn-primary" (click)="decrementQuantite(p)" [disabled]="p.quantity">Buy</button>
+   <input type="submit" value="like"(click)="incrementLike(i)" [disabled]="p.quantity" >
+</div>
+</div>
+<input type="number" [(ngModel)]="search" >
+<br>
+<br>
+<br>
+<br>
+<br><!--
+<div *ngFor=" let p of listProdcut; let i=index">
+  <div *ngIf="p.quantity==0" [style.backgroundColor]="'red'"  >
+    {{p.id}}
+    {{p.title}}
+    {{p.price}}
+    {{p.quantity}}
+    {{p.like}}
+    <button type="button" class="btn btn-primary" (click)="decrementQuantite(p)" [disabled]="p.quantity">Buy</button>
+    <input type="submit" value="like"(click)="incrementLike(i)" [disabled]="p.quantity" >
+  </div>
+  <div *ngIf="p.quantity>0" [style.backgroundColor]="'green'"  >
+    {{p.id}}
+    {{p.title}}
+    {{p.price}}
+    {{p.quantity}}
+    {{p.like}}
+    <button type="button" class="btn btn-primary" (click)="decrementQuantite(p)" [disabled]="p.quantity">Buy</button>
+    <input type="submit" value="like"(click)="incrementLike(i)" [disabled]="p.quantity" >
+  </div>-->
+<br><br><!-- if else en meme sapn ou div -->
+<div *ngFor=" let p of listProdcut; let i=index">
+  <span  [ngStyle]="{'backgroundColor' :p.quantity==0?'red':'blue'}"   >
+    {{p.id}}
+    {{p.title}}
+    {{p.price}}
+    {{p.quantity}}
+    {{p.like}}
+    <a [routerLink]="['/details/',p.id]">details</a>
+    <a routerLink="/details/{{p.id}}">details</a>
+    <button type="button" class="btn btn-primary" (click)="decrementQuantite(p)" [disabled]="p.quantity">Buy</button>
+    <input type="submit" value="like"(click)="incrementLike(i)" [disabled]="p.quantity" >
+  </span>
+</div>

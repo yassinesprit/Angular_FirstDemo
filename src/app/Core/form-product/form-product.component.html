@@ -1,0 +1,35 @@
+APP E-Commerce
+<form #f="ngForm">
+  <label>id</label>
+  <input type="text" name="id" required ngModel pattern="[0-9]*" #id="ngModel">
+  <div *ngIf=" id.invalid && id.touched ">
+    saisir chiffre
+  </div>
+  <label>title</label>
+  <input type="text" name="title" ngModel required minlength="3" #title="ngModel">
+  <div *ngIf="title.touched">
+    <div *ngIf="title.errors?.['required']">
+      required
+    </div>
+    <div *ngIf="title.errors?.['minlength']">
+      MinLength
+    </div>
+  </div>
+
+
+  <label>quantity</label>
+  <input type="number" name="quantity" ngModel min="1" pattern="[0-9]{3}">
+  <div *ngIf=" id.invalid && id.touched ">
+    saisir 3 chiffre
+  </div>
+
+  <input type="submit" value="add"  [disabled]="f.invalid" (click)="addElementToTable(f.value)">
+</form>
+<div *ngIf="etat==true">
+<div *ngFor="let p of product">
+{{p.id}}
+{{p.title}}
+</div >
+</div>
+
+<input type="submit" value="{{etat?'hide':'show'}}" (click)="changeEtat()" >

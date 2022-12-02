@@ -8,6 +8,7 @@ import {LoginComponent} from "./Core/User/login/login.component";
 import {DetailsComponent} from "./Core/Productss/details/details.component";
 import {ProductsComponent} from "./products/products.component";
 import {HomeComponentComponent} from "./Workshops/3/home-component/home-component.component";
+import {FormProductComponent} from "./Core/form-product/form-product.component";
 
 const routes: Routes = [
  /* {
@@ -33,6 +34,9 @@ const routes: Routes = [
   },
   {
     path:"details/:id" , component:DetailsComponent
+  },
+  {
+    path:"form", component:FormProductComponent
   }
 
 ];

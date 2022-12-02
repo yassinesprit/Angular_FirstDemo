@@ -18,6 +18,8 @@ import { LoginComponent } from './Core/User/login/login.component';
 import { DetailsComponent } from './Core/Productss/details/details.component';
 import { HomeComponentComponent } from './Workshops/3/home-component/home-component.component';
 import { FormProductComponentComponent } from './Workshops/3/form-product-component/form-product-component.component';
+import { FormProductComponent } from './Core/form-product/form-product.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -35,12 +37,14 @@ import { FormProductComponentComponent } from './Workshops/3/form-product-compon
     LoginComponent,
     DetailsComponent,
     HomeComponentComponent,
-    FormProductComponentComponent
+    FormProductComponentComponent,
+    FormProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
